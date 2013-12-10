@@ -34,7 +34,7 @@ a:active {
 }
 
 /* typography */
-#reg_form h3 { color:#eee; margin-top:0px; }
+#reg_form h3 { color:#eee; margin-top:0px; text-align:center;}
 #reg_form p { font-size:11px; }
 
 

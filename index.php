@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$_SESSION['step'] = 1;
 ?>
 <!doctype html>
 <html>
@@ -14,8 +14,8 @@ session_start();
 <body>
 <form id="reg_form">
   <fieldset>
-    <center><h3>Registration form</h3>
-    <p>Please enter your email address to continue. </p></center>
+    <h3>Registration form</h3>
+    <p>Please enter your email address to continue. </p>
 
     <p>
       <label>email *</label>
@@ -36,7 +36,13 @@ session_start();
 			if (check.data("validator").checkValidity() == true)
 			{
 				event.preventDefault();
-				window.location.href = "registration.php";
+				$.post("ajax/submit_email.php", function(data) {
+
+				}).done(function(data) {
+					window.location.href = "registration.php";
+				});
+
+
 			}
 
 		});
