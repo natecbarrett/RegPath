@@ -1,4 +1,7 @@
 <?php
+session_start();
+$step = isset($_SESSION['step']) ? $_SESSION['step'] : 0;
+if ($step != 2) header("location: index.php");
 ?>
 <!doctype html>
 <html>
@@ -36,7 +39,7 @@
 					default_value = (typeof value.value != 'undefined') ? value.value : '';
 					item = "<label>" + value.label + "*</label><input type='" + value.type + "' value='" + default_value + "'";
 					if (value.required) item += " required='required'";
-					item += "/>";
+					item += "/><br/>";
 					$(item).attr("id", value.id).attr("name", value.name).appendTo("#reg_form");
 				}
 
@@ -46,7 +49,7 @@
 					label = "<label>" + value.label + "</label>";
 					$(label).appendTo("#reg_form");
 					$.each(value.options, function(index,value) {
-						radio = "<input type='radio' name='" + group_name + "' id='" + value.id + "' value='" + value.value + "'/><label for = '" + value.id + "'>" + value.label + "</label>";
+						radio = "<input type='radio' name='" + group_name + "' id='" + value.id + "' value='" + value.value + "'/><label class='radiotype' for = '" + value.id + "'>" + value.label + "</label>";
 						$(radio).appendTo("#reg_form");
 					});
 
@@ -61,7 +64,7 @@
 						item += "<option value='" + value.submit_value + "'>" + value.show_value + "</option>";
 					});
 
-					item += "</select>";
+					item += "</select><br/>";
 
 					$(item).appendTo("#reg_form");
 				}
