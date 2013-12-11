@@ -34,11 +34,12 @@ if ($step != 2) header("location: index.php");
 					$("<button type='submit' id='" + value.id + "'>" + value.label + "</button>").appendTo("#reg_form");
 					submit_id = value.id;
 				}
-				else if (value.type == 'text' || value.type == "email")
+				else if (value.type == 'text' || value.type == "email" || value.type == "checkbox")
 				{
 					default_value = (typeof value.value != 'undefined') ? value.value : '';
 					item = "<label>" + value.label + "*</label><input type='" + value.type + "' value='" + default_value + "'";
 					if (value.required) item += " required='required'";
+					if (value.size) item += " size='" + value.size + "'";
 					item += "/><br/>";
 					$(item).attr("id", value.id).attr("name", value.name).appendTo("#reg_form");
 				}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-sources>
+	<data-source id="mysql5-1386772921085-843028296" provider="mysql" driver="mysql5" name="MySQL - reg_path" create-date="1386772921085" save-password="true" show-system-objects="true" read-only="false">
+		<connection host="localhost" port="3306" server="" database="reg_path" url="jdbc:mysql://localhost:3306/reg_path" user="root" home="C:\Program Files (x86)\Zend\MySQL55" type="dev"/>
+	</data-source>
+</data-sources>
